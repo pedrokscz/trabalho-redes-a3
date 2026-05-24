@@ -1,6 +1,6 @@
 <?php include_once('config.php');
 if(isset($_REQUEST['editId']) and $_REQUEST['editId']!=""){
-	$row	=	$db->getAllRecords('dadoscliente','*',' AND id="'.$_REQUEST['editId'].'"');
+	$row	=	$db->getAllRecords('cliente.dadoscliente','*',' AND id="'.$_REQUEST['editId'].'"');
 }
 
 if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
@@ -20,7 +20,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 					'email'=>$email,
 					'telefone'=>$telefone,
 					);
-	$update	=	$db->update('dadoscliente',$data,array('id'=>$editId));
+	$update	=	$db->update('cliente.dadoscliente',$data,array('id'=>$editId));
 	if($update){
 		header('location: browse-users.php?msg=rus');
 		exit;

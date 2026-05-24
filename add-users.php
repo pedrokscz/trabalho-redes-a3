@@ -16,7 +16,7 @@ if(isset($_REQUEST['submit']) and $_REQUEST['submit']!=""){
 					'email'=>$email,
 					'telefone'=>$telefone,
 				);
-		$insert	=	$db->insert('dadoscliente',$data);
+		$insert	=	$db->insert('cliente.dadoscliente',$data);
 		if($insert){
 			header('location:browse-users.php?msg=ras');
 			exit;
